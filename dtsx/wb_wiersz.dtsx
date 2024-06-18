@@ -1,0 +1,849 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/7/2024 2:07:07 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SEBASTIAN-PIET"
+  DTS:CreatorName="SEBASTIAN-PIET\seba6"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{564E3404-21D6-43F4-8699-695D6D8948B2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1045"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="wb_wiersz"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{4EFA9D0D-5A88-47BE-8DE9-57BE58910B58}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{51A7D6F3-1EBE-497A-9AF2-0BE570D112F6}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=jpk_wb;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{89C6E0F0-7706-4562-BC37-50A766789EA4}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="C:\Users\seba6\Desktop\Studia\6. semestr\Wykorzystanie MS SQL do budowy aplikacji - laby\wb_wiersz.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:ObjectName="id_dokumentu"
+              DTS:DTSID="{FAC14460-AFA6-401C-A2CB-ED67693A7770}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:ObjectName="numer_wiersza"
+              DTS:DTSID="{BDE1C9B7-2143-491D-A71F-1CAC5FD62012}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:ObjectName="data_operacji"
+              DTS:DTSID="{0CD2FA1E-F4E5-470F-A11E-A4D6C61F15F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:ObjectName="nazwa_podmiotu"
+              DTS:DTSID="{58966B97-AC89-4683-AD28-6247E765279F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:ObjectName="opis_operacji"
+              DTS:DTSID="{48BAAD06-2AAD-4D3D-B31F-665B48BFCC60}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:ObjectName="kwota_operacji"
+              DTS:DTSID="{D983CC7B-FA03-4674-927E-9CD299AE5712}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="saldo_operacji"
+              DTS:DTSID="{0073ADED-2CD6-4319-A36F-E94EF7B3C8C9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{093DA61A-399D-4191-90D8-207132B37F93}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - tmp_wb_wiersz"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tmp_wb_wiersz]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].Columns[id_dokumentu]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="id_dokumentu"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[id_dokumentu]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[id_dokumentu]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].Columns[numer_wiersza]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="numer_wiersza"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[numer_wiersza]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[numer_wiersza]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].Columns[data_operacji]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="data_operacji"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[data_operacji]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[data_operacji]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].Columns[nazwa_podmiotu]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nazwa_podmiotu"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[nazwa_podmiotu]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[nazwa_podmiotu]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].Columns[opis_operacji]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="opis_operacji"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[opis_operacji]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[opis_operacji]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].Columns[kwota_operacji]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="kwota_operacji"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[kwota_operacji]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[kwota_operacji]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].Columns[saldo_operacji]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="saldo_operacji"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[saldo_operacji]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[saldo_operacji]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[id_dokumentu]"
+                      dataType="wstr"
+                      length="15"
+                      name="id_dokumentu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[numer_wiersza]"
+                      dataType="wstr"
+                      length="15"
+                      name="numer_wiersza" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[data_operacji]"
+                      dataType="wstr"
+                      length="10"
+                      name="data_operacji" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[nazwa_podmiotu]"
+                      dataType="wstr"
+                      length="255"
+                      name="nazwa_podmiotu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[opis_operacji]"
+                      dataType="wstr"
+                      length="255"
+                      name="opis_operacji" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[kwota_operacji]"
+                      dataType="wstr"
+                      length="20"
+                      name="kwota_operacji" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input].ExternalColumns[saldo_operacji]"
+                      dataType="wstr"
+                      length="20"
+                      name="saldo_operacji" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - wb_wiersz_txt"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Source - wb_wiersz_txt"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[id_dokumentu]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[id_dokumentu]"
+                      length="15"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[id_dokumentu]"
+                      name="id_dokumentu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[numer_wiersza]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[numer_wiersza]"
+                      length="15"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[numer_wiersza]"
+                      name="numer_wiersza"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[data_operacji]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[data_operacji]"
+                      length="10"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[data_operacji]"
+                      name="data_operacji"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[nazwa_podmiotu]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[nazwa_podmiotu]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[nazwa_podmiotu]"
+                      name="nazwa_podmiotu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[opis_operacji]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[opis_operacji]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[opis_operacji]"
+                      name="opis_operacji"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[kwota_operacji]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[kwota_operacji]"
+                      length="20"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[kwota_operacji]"
+                      name="kwota_operacji"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[saldo_operacji]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[saldo_operacji]"
+                      length="20"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].Columns[saldo_operacji]"
+                      name="saldo_operacji"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[id_dokumentu]"
+                      dataType="wstr"
+                      length="15"
+                      name="id_dokumentu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[numer_wiersza]"
+                      dataType="wstr"
+                      length="15"
+                      name="numer_wiersza" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[data_operacji]"
+                      dataType="wstr"
+                      length="10"
+                      name="data_operacji" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[nazwa_podmiotu]"
+                      dataType="wstr"
+                      length="255"
+                      name="nazwa_podmiotu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[opis_operacji]"
+                      dataType="wstr"
+                      length="255"
+                      name="opis_operacji" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[kwota_operacji]"
+                      dataType="wstr"
+                      length="20"
+                      name="kwota_operacji" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output].ExternalColumns[saldo_operacji]"
+                      dataType="wstr"
+                      length="20"
+                      name="saldo_operacji" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      dataType="nText"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - tmp_wb_wiersz.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - wb_wiersz_txt.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Kasuj dane tymczasowe"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{729111F0-2D4D-4A7A-BB7C-CE3A641937BD}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Kasuj dane tymczasowe"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{51A7D6F3-1EBE-497A-9AF2-0BE570D112F6}"
+          SQLTask:SqlStatementSource="DELETE FROM [dbo].[tmp_wb_wiersz] &#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Kasuj plik źródłowy"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{737BB8F5-05C0-4F33-B9FB-FDFAD2515E14}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Kasuj plik źródłowy"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskSourcePath="{89C6E0F0-7706-4562-BC37-50A766789EA4}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Przenieś dane do tabeli docelowych"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{5f89a97f-5edd-4adc-84e0-f3577f432662}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Przenieś dane do tabeli docelowych"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{51A7D6F3-1EBE-497A-9AF2-0BE570D112F6}"
+          SQLTask:SqlStatementSource="EXEC wb_move_data" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Waliduj dane tymczasowe"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{4c25a13e-6beb-493a-88a3-a1cdccb9a1c4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Waliduj dane tymczasowe"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{51A7D6F3-1EBE-497A-9AF2-0BE570D112F6}"
+          SQLTask:SqlStatementSource="EXEC tmp_wb_wiersz_check" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1415B053-C779-4671-9820-90353357C888}"
+      DTS:From="Package\Data Flow Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Waliduj dane tymczasowe" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A5C2E2EC-3F30-4414-AA7F-4AC8C98D3AFF}"
+      DTS:From="Package\Przenieś dane do tabeli docelowych"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Kasuj plik źródłowy" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{337FD0F8-5359-48B6-95C9-A1DDCB3D5BCC}"
+      DTS:From="Package\Waliduj dane tymczasowe"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Przenieś dane do tabeli docelowych" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{E8761EB7-6285-4CDA-B3E2-13DB1DE739BC\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{E8761EB7-6285-4CDA-B3E2-13DB1DE739BC}"
+      DTS:From="Package\Kasuj dane tymczasowe"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{E8761EB7-6285-4CDA-B3E2-13DB1DE739BC}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Data Flow Task 1"
+          TopLeft="26.5333330146141,107.1" />
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\Kasuj dane tymczasowe"
+          TopLeft="11.3333330146141,5.49999999999995" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{E8761EB7-6285-4CDA-B3E2-13DB1DE739BC\}]"
+          TopLeft="106.133333014614,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\Waliduj dane tymczasowe"
+          TopLeft="12.4999993170302,204.533331911034" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="108.916666165822,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.8333319110342"
+              Start="0,0"
+              End="0,48.3333319110342">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.3333319110342" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175.2,41.6"
+          Id="Package\Kasuj plik źródłowy"
+          TopLeft="21.6666654828522,455.399996872147" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\Przenieś dane do tabeli docelowych"
+          TopLeft="12.4999993170302,324.133331079351" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="111.69999931703,246.133331911034">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,77.9999991683167"
+              Start="0,0"
+              End="0,70.4999991683167">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.4999991683167" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="110.483332399941,365.733331079351">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,89.6666657927962"
+              Start="0,0"
+              End="0,82.1666657927962">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,82.1666657927962" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="185.6,41.6"
+          Id="Package\Data Flow Task 1\Source - wb_wiersz_txt"
+          TopLeft="6.70000000000002,5.49999999999995" />
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\Data Flow Task 1\Destination - tmp_wb_wiersz"
+          TopLeft="5.50000000000001,107.1" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="99.5,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Destination - tmp_wb_wiersz">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

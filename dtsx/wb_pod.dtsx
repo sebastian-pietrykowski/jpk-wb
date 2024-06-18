@@ -1,0 +1,1121 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/8/2024 12:43:55 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="SEBASTIAN-PIET"
+  DTS:CreatorName="SEBASTIAN-PIET\seba6"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{1794367C-185E-4B67-A0C3-E85BC54F7AA5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5397.1"
+  DTS:LocaleID="1045"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="wb_pod"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{B14FDA2D-F9EE-4745-BCCD-26B39460699D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6C18CA34-FCA4-4CC7-B0CE-A3585406E464}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=jpk_wb;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{2FC8868D-9F59-429B-8B11-A2C799E3E1F9}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1045"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="C:\Users\seba6\Desktop\Studia\6. semestr\Wykorzystanie MS SQL do budowy aplikacji - laby\wb_pod.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:ObjectName="id_podmiotu"
+              DTS:DTSID="{2A0A93D7-2370-4572-B1C3-539A07AFEB75}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:ObjectName="nip"
+              DTS:DTSID="{FFABBA2F-547D-4D5B-B125-FBEB70FEE96E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:ObjectName="pelna_nazwa"
+              DTS:DTSID="{DBCDD03F-C447-4FFA-A136-AC8FD8CAA8D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="9"
+              DTS:DataType="130"
+              DTS:ObjectName="regon"
+              DTS:DTSID="{E66C9FAE-500F-4B0A-B857-5D05520E3BDB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:ObjectName="kod_kraju"
+              DTS:DTSID="{80439CA7-43C1-40C4-AABF-CD6F7FDDCCAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:ObjectName="wojewodztwo"
+              DTS:DTSID="{5EEAA940-0076-4E10-8B86-1366E9EFC7E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:ObjectName="powiat"
+              DTS:DTSID="{4C1E7B26-9C58-4E72-89AF-E5D7414FEB68}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:ObjectName="gmina"
+              DTS:DTSID="{117BBDA4-7536-40E7-B9ED-BA4272A2F698}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:ObjectName="ulica"
+              DTS:DTSID="{0F42F026-9A36-4A62-89BF-0EE9F7878E58}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:ObjectName="nr_domu"
+              DTS:DTSID="{44F18408-8CE6-4BF0-94EF-2A22BD02242A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="130"
+              DTS:ObjectName="nr_lokalu"
+              DTS:DTSID="{645FD43E-1794-4A58-B1E8-33A1B1002601}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:ObjectName="miejscowosc"
+              DTS:DTSID="{D29C4F9F-03DE-4696-998C-5F12753BD563}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:ObjectName="kod_pocztowy"
+              DTS:DTSID="{D80C12A3-E416-4AC7-B2CF-F005229A3655}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="poczta"
+              DTS:DTSID="{3D3D46F5-E8A4-4165-87DB-977C347A9DC2}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{D731227C-902F-4C76-9501-446297F6C052}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - tmp_wb_pod"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - tmp_wb_pod"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tmp_wb_pod]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[id_podmiotu]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="id_podmiotu"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[id_podmiotu]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[id_podmiotu]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[nip]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="nip"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[nip]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[nip]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[pelna_nazwa]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="pelna_nazwa"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[pelna_nazwa]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[pelna_nazwa]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[regon]"
+                      cachedDataType="wstr"
+                      cachedLength="9"
+                      cachedName="regon"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[regon]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[regon]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[kod_kraju]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="kod_kraju"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[kod_kraju]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[kod_kraju]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[wojewodztwo]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="wojewodztwo"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[wojewodztwo]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[wojewodztwo]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[powiat]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="powiat"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[powiat]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[powiat]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[gmina]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="gmina"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[gmina]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[gmina]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[ulica]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="ulica"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[ulica]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[ulica]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[nr_domu]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="nr_domu"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[nr_domu]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[nr_domu]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[nr_lokalu]"
+                      cachedDataType="wstr"
+                      cachedLength="5"
+                      cachedName="nr_lokalu"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[nr_lokalu]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[nr_lokalu]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[miejscowosc]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="miejscowosc"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[miejscowosc]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[miejscowosc]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[kod_pocztowy]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="kod_pocztowy"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[kod_pocztowy]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[kod_pocztowy]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].Columns[poczta]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="poczta"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[poczta]"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[poczta]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[id_podmiotu]"
+                      dataType="wstr"
+                      length="15"
+                      name="id_podmiotu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[nip]"
+                      dataType="wstr"
+                      length="10"
+                      name="nip" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[pelna_nazwa]"
+                      dataType="wstr"
+                      length="255"
+                      name="pelna_nazwa" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[regon]"
+                      dataType="wstr"
+                      length="9"
+                      name="regon" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[kod_kraju]"
+                      dataType="wstr"
+                      length="50"
+                      name="kod_kraju" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[wojewodztwo]"
+                      dataType="wstr"
+                      length="50"
+                      name="wojewodztwo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[powiat]"
+                      dataType="wstr"
+                      length="50"
+                      name="powiat" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[gmina]"
+                      dataType="wstr"
+                      length="50"
+                      name="gmina" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[ulica]"
+                      dataType="wstr"
+                      length="100"
+                      name="ulica" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[nr_domu]"
+                      dataType="wstr"
+                      length="10"
+                      name="nr_domu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[nr_lokalu]"
+                      dataType="wstr"
+                      length="5"
+                      name="nr_lokalu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[miejscowosc]"
+                      dataType="wstr"
+                      length="100"
+                      name="miejscowosc" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[kod_pocztowy]"
+                      dataType="wstr"
+                      length="10"
+                      name="kod_pocztowy" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input].ExternalColumns[poczta]"
+                      dataType="wstr"
+                      length="100"
+                      name="poczta" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - wb_pod_txt"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1045"
+              name="Source - wb_pod_txt"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - wb_pod_txt.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[id_podmiotu]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[id_podmiotu]"
+                      length="15"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[id_podmiotu]"
+                      name="id_podmiotu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[nip]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[nip]"
+                      length="10"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[nip]"
+                      name="nip"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[pelna_nazwa]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[pelna_nazwa]"
+                      length="255"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[pelna_nazwa]"
+                      name="pelna_nazwa"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[regon]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[regon]"
+                      length="9"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[regon]"
+                      name="regon"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[kod_kraju]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[kod_kraju]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[kod_kraju]"
+                      name="kod_kraju"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[wojewodztwo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[wojewodztwo]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[wojewodztwo]"
+                      name="wojewodztwo"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[powiat]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[powiat]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[powiat]"
+                      name="powiat"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[gmina]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[gmina]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[gmina]"
+                      name="gmina"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[ulica]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[ulica]"
+                      length="100"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[ulica]"
+                      name="ulica"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[nr_domu]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[nr_domu]"
+                      length="10"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[nr_domu]"
+                      name="nr_domu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[nr_lokalu]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[nr_lokalu]"
+                      length="5"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[nr_lokalu]"
+                      name="nr_lokalu"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[miejscowosc]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[miejscowosc]"
+                      length="100"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[miejscowosc]"
+                      name="miejscowosc"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[kod_pocztowy]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[kod_pocztowy]"
+                      length="10"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[kod_pocztowy]"
+                      name="kod_pocztowy"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[poczta]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[poczta]"
+                      length="100"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].Columns[poczta]"
+                      name="poczta"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[id_podmiotu]"
+                      dataType="wstr"
+                      length="15"
+                      name="id_podmiotu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[nip]"
+                      dataType="wstr"
+                      length="10"
+                      name="nip" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[pelna_nazwa]"
+                      dataType="wstr"
+                      length="255"
+                      name="pelna_nazwa" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[regon]"
+                      dataType="wstr"
+                      length="9"
+                      name="regon" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[kod_kraju]"
+                      dataType="wstr"
+                      length="50"
+                      name="kod_kraju" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[wojewodztwo]"
+                      dataType="wstr"
+                      length="50"
+                      name="wojewodztwo" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[powiat]"
+                      dataType="wstr"
+                      length="50"
+                      name="powiat" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[gmina]"
+                      dataType="wstr"
+                      length="50"
+                      name="gmina" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[ulica]"
+                      dataType="wstr"
+                      length="100"
+                      name="ulica" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[nr_domu]"
+                      dataType="wstr"
+                      length="10"
+                      name="nr_domu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[nr_lokalu]"
+                      dataType="wstr"
+                      length="5"
+                      name="nr_lokalu" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[miejscowosc]"
+                      dataType="wstr"
+                      length="100"
+                      name="miejscowosc" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[kod_pocztowy]"
+                      dataType="wstr"
+                      length="10"
+                      name="kod_pocztowy" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output].ExternalColumns[poczta]"
+                      dataType="wstr"
+                      length="100"
+                      name="poczta" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      dataType="nText"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - tmp_wb_pod.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - wb_pod_txt.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Kasuj dane tymczasowe"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{7B8C5C1D-DFC4-4756-AB38-59DD990E82E5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Kasuj dane tymczasowe"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6C18CA34-FCA4-4CC7-B0CE-A3585406E464}"
+          SQLTask:SqlStatementSource="DELETE FROM [dbo].[tmp_wb_pod] &#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Kasuj plik źródłowy"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{DE52AF05-FDAE-4D8D-8FFB-167D72E0CAB1}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Kasuj plik źródłowy"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskSourcePath="{2FC8868D-9F59-429B-8B11-A2C799E3E1F9}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Waliduj dane tymczasowe"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{551e8891-2928-4ca9-a29a-e066ea5619a7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Waliduj dane tymczasowe"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6C18CA34-FCA4-4CC7-B0CE-A3585406E464}"
+          SQLTask:SqlStatementSource="EXEC tmp_wb_pod_check" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5282BD01-0D14-45B2-9E6D-805CF79A00BC}"
+      DTS:From="Package\Data Flow Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Waliduj dane tymczasowe" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{BD6B017A-DFA0-4D3B-AA9B-950B8E5442F3}"
+      DTS:From="Package\Waliduj dane tymczasowe"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Kasuj plik źródłowy" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{30D054C3-2101-4873-8C2A-1A093D605C4D\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{30D054C3-2101-4873-8C2A-1A093D605C4D}"
+      DTS:From="Package\Kasuj dane tymczasowe"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{30D054C3-2101-4873-8C2A-1A093D605C4D}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="159.2,41.6"
+          Id="Package\Data Flow Task 1"
+          TopLeft="20.7,107.1" />
+        <NodeLayout
+          Size="190.4,41.6"
+          Id="Package\Kasuj dane tymczasowe"
+          TopLeft="5.50000000000001,5.49999999999995" />
+        <NodeLayout
+          Size="167.2,41.6"
+          Id="Package\Kasuj plik źródłowy"
+          TopLeft="20.8333321950499,267.199998191992" />
+        <NodeLayout
+          Size="198.4,41.6"
+          Id="Package\Waliduj dane tymczasowe"
+          TopLeft="4.16666643901004,194.999998643994" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="101.833333219505,148.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.299998643994"
+              Start="0,0"
+              End="0,38.799998643994">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.799998643994" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="103.89999931703,236.599998643994">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.5999995479981"
+              Start="0,0"
+              End="0,23.0999995479981">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.0999995479981" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{30D054C3-2101-4873-8C2A-1A093D605C4D\}]"
+          TopLeft="100.3,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="173.6,41.6"
+          Id="Package\Data Flow Task 1\Source - wb_pod_txt"
+          TopLeft="6.70000000000002,5.49999999999995" />
+        <NodeLayout
+          Size="199.2,41.6"
+          Id="Package\Data Flow Task 1\Destination - tmp_wb_pod"
+          TopLeft="5.50000000000001,107.1" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="93.5,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Destination - tmp_wb_pod">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
